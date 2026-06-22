@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Terra Real Estate - Investor Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&amp;family=Nunito+Sans:ital,opsz,wght@0,200..1000;1,200..1000&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#dbd7cf",
+                        "on-secondary-fixed": "#1e1a13",
+                        "primary-fixed": "#c8e8d0",
+                        "secondary-fixed": "#f0e8db",
+                        "on-background": "#2e3230",
+                        "on-secondary-container": "#5e5548",
+                        "surface-container": "#f0ece4",
+                        "on-primary-fixed": "#002110",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#221a05",
+                        "secondary": "#6b6358",
+                        "inverse-on-surface": "#f5f0e8",
+                        "surface-tint": "#4a7c59",
+                        "primary-fixed-dim": "#8ecf9e",
+                        "inverse-primary": "#8ecf9e",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f5f1ea",
+                        "primary": "#4a7c59",
+                        "primary-container": "#78a886",
+                        "tertiary-container": "#c4a66a",
+                        "secondary-container": "#f0e8db",
+                        "on-primary-container": "#d8f0de",
+                        "surface-variant": "#e4e0d8",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#2a6038",
+                        "background": "#faf6f0",
+                        "error": "#b83230",
+                        "error-container": "#ffdad8",
+                        "secondary-fixed-dim": "#d4ccbf",
+                        "outline": "#74796e",
+                        "on-secondary-fixed-variant": "#4a4538",
+                        "on-surface-variant": "#4a4e4a",
+                        "surface-container-highest": "#e4e0d8",
+                        "inverse-surface": "#2e3230",
+                        "surface-container-high": "#eae6de",
+                        "on-tertiary-fixed-variant": "#554020",
+                        "on-tertiary-container": "#554020",
+                        "tertiary-fixed-dim": "#dcc48e",
+                        "on-error-container": "#690005",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#faf6f0",
+                        "tertiary-fixed": "#f8e0a8",
+                        "on-surface": "#2e3230",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c4c8bc",
+                        "surface": "#faf6f0",
+                        "tertiary": "#705c30"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Literata"],
+                        "display": ["Literata"],
+                        "body": ["Nunito Sans"],
+                        "label": ["Nunito Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Nunito Sans', sans-serif; background-color: #faf6f0; }
+        h1, h2, h3, .font-headline { font-family: 'Literata', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+        .glass-card { background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(8px); border: 1px solid rgba(196, 200, 188, 0.3); }
+        .progress-glow { box-shadow: 0 0 12px rgba(74, 124, 89, 0.2); }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f5f1ea; }
+        ::-webkit-scrollbar-thumb { background: #c4c8bc; border-radius: 10px; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="text-on-surface">
+<!-- Top Navigation -->
+<header class="w-full top-0 sticky bg-surface-container-low dark:bg-surface-container-low shadow-sm z-30">
+<div class="flex justify-between items-center px-6 py-4 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">map</span>
+<h1 class="font-headline text-2xl font-bold text-primary dark:text-inverse-primary">Terra Real Estate</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<a class="text-on-surface-variant hover:bg-surface-variant/50 transition-colors px-2 py-1 rounded" href="index.html">الرئيسية</a>
+<a class="text-on-surface-variant hover:bg-surface-variant/50 transition-colors px-2 py-1 rounded" href="search.html">السوق العقاري</a>
+<a class="text-on-surface-variant hover:bg-surface-variant/50 transition-colors px-2 py-1 rounded" href="details.html">المشاريع</a>
+<a class="text-primary dark:text-inverse-primary font-bold border-b-2 border-primary px-2 py-1" href="dashboard.html">لوحة المستثمر</a>
+</nav>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="A high-quality professional portrait of a Saudi businessman in traditional attire, set against a blurred warm office background with soft amber lighting. The style is clean, modern, and exudes leadership and trustworthiness, utilizing the Terra brand's earthy green and cream palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqNmQ8JsoA0JY9uCwIayI-dWCZwflFvVnzP2Gy4HjxLH3y8Dv6vUPkniVcHbB0me9WrF0jVt2ttBxIR7EYnfAj2Vf5Exqp9A-QTotxPpTcrSx8KrpbPra83DzTOCrlLWCO71ex97leBFY-olMf5JCW5KuawGZ4fUrUGdjKkhhHnUrzg31BMWaiSq2gPkFKJH4HPqONKbbWX_fLti7pIDHKqsPMHHBcnxKdM4ri8CKhfSPO_bx-4atIyeZaKMIwWbp47ZqYHnSSP7VA"/>
+</div>
+</div>
+</div>
+</header>
+<div class="flex max-w-7xl mx-auto min-h-screen relative">
+<!-- Side Navigation Drawer -->
+<aside class="hidden lg:flex flex-col h-full w-80 bg-surface-container-lowest sticky top-20 py-8 px-4 border-l border-outline-variant/20">
+<div class="flex flex-col mb-10 px-4">
+<h2 class="font-headline text-xl font-bold text-primary">خالد آل سعود</h2>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-xs px-2 py-0.5 bg-tertiary-container text-on-tertiary-container rounded-full font-bold">مستثمر بريميوم</span>
+<span class="text-xs text-on-surface-variant">الرياض، المملكة العربية السعودية</span>
+</div>
+</div>
+<nav class="space-y-2">
+<div class="flex items-center gap-4 text-on-surface-variant px-4 py-3 mx-2 hover:bg-secondary-container/50 transition-all cursor-pointer rounded-lg">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-body text-base">المتجر العقاري</span>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant px-4 py-3 mx-2 hover:bg-secondary-container/50 transition-all cursor-pointer rounded-lg">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-body text-base">البحث الإقليمي</span>
+</div>
+<div class="flex items-center gap-4 bg-primary-container text-on-primary-container rounded-lg px-4 py-3 mx-2 shadow-md">
+<span class="material-symbols-outlined">trending_up</span>
+<span class="font-body text-base font-bold">مركز الاستثمار</span>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant px-4 py-3 mx-2 hover:bg-secondary-container/50 transition-all cursor-pointer rounded-lg">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body text-base">تتبع المشاريع</span>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant px-4 py-3 mx-2 hover:bg-secondary-container/50 transition-all cursor-pointer rounded-lg">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-body text-base">الدعم الفني</span>
+</div>
+</nav>
+<div class="mt-auto p-4 bg-secondary-container/30 rounded-xl mx-2 border border-outline-variant/30">
+<p class="text-sm font-bold text-primary mb-2">تحديثات السوق</p>
+<div class="text-xs text-on-surface-variant space-y-2">
+<p>• نمو القطاع السكني بنسبة 4.2% في جدة</p>
+<p>• إطلاق مشروع روشن الجديد بالمربع</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 px-6 py-8 pb-32">
+<!-- Hero Stats Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="md:col-span-2 relative h-64 rounded-xl overflow-hidden shadow-sm">
+
+<div class="relative z-10 p-8 flex flex-col justify-end h-full bg-gradient-to-t from-background/90 to-transparent">
+<h2 class="text-3xl font-headline font-bold text-on-background">إجمالي المحفظة العقارية</h2>
+<div class="flex items-baseline gap-4 mt-2">
+<span class="text-5xl font-bold text-primary">12,450,000</span>
+<span class="text-xl text-secondary">ريال سعودي</span>
+</div>
+<div class="flex items-center gap-2 mt-4 text-primary font-bold">
+<span class="material-symbols-outlined">arrow_upward</span>
+<span>+12.4% زيادة سنوية</span>
+</div>
+</div>
+</div>
+<div class="bg-primary text-on-primary p-8 rounded-xl flex flex-col justify-between shadow-lg">
+<div>
+<span class="material-symbols-outlined text-4xl opacity-80">account_balance_wallet</span>
+<p class="mt-4 text-on-primary/80 font-medium">العائد السنوي المتوقع</p>
+<h3 class="text-4xl font-bold">8.5%</h3>
+</div>
+<button class="bg-on-primary text-primary px-6 py-2 rounded-lg font-bold hover:bg-surface-container-low transition-colors active:scale-95 duration-200">
+                        سحب الأرباح
+                    </button>
+</div>
+</section>
+<!-- Project Tracking Section -->
+<section class="mb-12">
+<div class="flex justify-between items-end mb-6">
+<div>
+<h2 class="text-2xl font-headline font-bold text-on-background">تتبع المشاريع النشطة</h2>
+<p class="text-on-surface-variant">متابعة لحظية لمراحل الإنشاء والتطوير</p>
+</div>
+<button class="text-primary font-bold flex items-center gap-1">عرض الكل <span class="material-symbols-outlined">chevron_left</span></button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Project Card 1 -->
+<div class="bg-white rounded-xl p-6 border border-outline-variant/20 shadow-sm flex flex-col md:flex-row gap-6 hover:shadow-md transition-shadow">
+<div class="w-full md:w-32 h-32 rounded-lg bg-surface-container overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A modern architectural visualization of a luxury residential villa in Riyadh with desert-modern style, featuring stone cladding, large glass windows, and warm ambient outdoor lighting at dusk. The palette reflects Terra's forest green and warm cream tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJJJAN_jXW6trFPDqiAKUthqCL6xCxMXVMbasFmi8laGclZ9jcCTEj7XfupU0N0e4hwOrKxcjjCnoXrwccw4ZdR6gYJ0y_H5HVVDpuEpfCPHiBTDJhF9M6KyMY0bVWc_CnRfEst6fSP0FX9g2NlYbQj_rdV61hBJ5E8-GEICrZkhCHK-ZsNlNEwGYbxHiOsWGbpGnrJE6rWTt18pdjJa8YRLxE7A0mfNreOQTkFa2ba-UEHA9RlpAlYAxIIRVhp6-1aZLvbWr2SiMZ"/>
+</div>
+<div class="flex-1">
+<h4 class="font-headline font-bold text-lg">مشروع نرجس - فيلا 42</h4>
+<p class="text-sm text-on-surface-variant mb-4">حي النرجس، الرياض</p>
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">مرحلة التشطيب</span>
+<span class="font-bold text-primary">75%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary progress-glow rounded-full" style="width: 75%"></div>
+</div>
+</div>
+<div class="mt-4 flex gap-4 text-xs">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">calendar_today</span> التسليم: يونيو 2024
+                                </div>
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-sm">verified</span> مطابقة الكود السعودي
+                                </div>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="bg-white rounded-xl p-6 border border-outline-variant/20 shadow-sm flex flex-col md:flex-row gap-6 hover:shadow-md transition-shadow">
+<div class="w-full md:w-32 h-32 rounded-lg bg-surface-container overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A bird's eye view of a commercial complex under construction in Dammam, Saudi Arabia. Crane silhouettes against a hazy orange sunset. The scene highlights urban growth and robust development, consistent with the Terra brand's earthy and professional look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvE403QCFkkeRukg0-Ki4ygzS6oYh5Fd_I3lOIxtCKthXORHFKO-FVq32FKaE29h1696gcA9AjWYVpxYETuznZWGxX5fhULgh2P2l64G6WVOuM_AiOxQ_PeNbliJwvRQOJxJpJqTsTJiQxLRcft_d0oIAO5MjDn7Nix4iXXaphAtlow4DFkoUvegGvEWylnNHhIrBZYC7YOXn2mzk2p5FB2cWR7xWy77PG_QaQ0wlW9a2_XT1Ep4LgEhXOUUTGAm5DoeLkSEW9AfGp"/>
+</div>
+<div class="flex-1">
+<h4 class="font-headline font-bold text-lg">توسعة مول الساحل</h4>
+<p class="text-sm text-on-surface-variant mb-4">كورنيش الدمام</p>
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">الهيكل الإنشائي</span>
+<span class="font-bold text-primary">40%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary progress-glow rounded-full" style="width: 40%"></div>
+</div>
+</div>
+<div class="mt-4 flex gap-4 text-xs">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">calendar_today</span> التسليم: مارس 2025
+                                </div>
+<div class="flex items-center gap-1 text-on-secondary-container">
+<span class="material-symbols-outlined text-sm">gavel</span> تم استلام الدفعة الثانية
+                                </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Content: Documents & News -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Document Center -->
+<div class="lg:col-span-2 bg-surface-container-low rounded-xl p-8 border border-outline-variant/30">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">folder_open</span>
+                            مركز الوثائق والعقود
+                        </h3>
+<button class="text-primary text-sm font-bold">تحميل الكل</button>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-white rounded-lg border border-outline-variant/10 group hover:border-primary/40 transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary">description</span>
+<div>
+<p class="font-bold text-on-background">صك ملكية - أرض النرجس</p>
+<p class="text-xs text-on-surface-variant">بصيغة PDF • تم التحديث قبل يومين</p>
+</div>
+</div>
+<button class="p-2 rounded-full hover:bg-primary-container/20 text-primary">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-4 bg-white rounded-lg border border-outline-variant/10 group hover:border-primary/40 transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary">contract</span>
+<div>
+<p class="font-bold text-on-background">عقد استثمار - مول الساحل</p>
+<p class="text-xs text-on-surface-variant">موقع إلكترونياً • 15 يناير 2024</p>
+</div>
+</div>
+<button class="p-2 rounded-full hover:bg-primary-container/20 text-primary">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-4 bg-white rounded-lg border border-outline-variant/10 group hover:border-primary/40 transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary">receipt_long</span>
+<div>
+<p class="font-bold text-on-background">التقرير الضريبي السنوي</p>
+<p class="text-xs text-on-surface-variant">الربع الرابع 2023</p>
+</div>
+</div>
+<button class="p-2 rounded-full hover:bg-primary-container/20 text-primary">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Market Feed -->
+<div class="bg-white rounded-xl p-8 border border-outline-variant/20 shadow-sm">
+<h3 class="font-headline text-xl font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">rss_feed</span>
+                        أخبار السوق
+                    </h3>
+<div class="space-y-6">
+<article class="group cursor-pointer">
+<time class="text-xs text-on-surface-variant">منذ ساعتين</time>
+<h4 class="font-bold group-hover:text-primary transition-colors mt-1">تسهيلات جديدة للمستثمرين في قطاع الضيافة السعودي</h4>
+<p class="text-sm text-on-surface-variant line-clamp-2 mt-2">أعلنت وزارة السياحة عن حزمة من الحوافز التشجيعية لزيادة الطاقة الاستيعابية للفنادق...</p>
+</article>
+<hr class="border-outline-variant/20"/>
+<article class="group cursor-pointer">
+<time class="text-xs text-on-surface-variant">منذ 5 ساعات</time>
+<h4 class="font-bold group-hover:text-primary transition-colors mt-1">ارتفاع الطلب على المكاتب الفاخرة في مركز الملك عبد الله المالي</h4>
+<p class="text-sm text-on-surface-variant line-clamp-2 mt-2">شهد الربع الأول طلباً غير مسبوق من شركات التقنية العالمية التي اتخذت من الرياض مقراً لها...</p>
+</article>
+<hr class="border-outline-variant/20"/>
+<button class="w-full py-3 text-primary font-bold bg-surface-container rounded-lg hover:bg-primary-fixed transition-colors">
+                            استكشاف المزيد
+                        </button>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Bottom Navigation Mobile -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 md:hidden bg-surface-container-high dark:bg-surface-container-high shadow-[0_-4px_20px_rgba(46,50,48,0.06)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-secondary-container px-4 py-1.5 hover:bg-primary/10 transition-colors" href="index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label text-xs font-medium">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container px-4 py-1.5 hover:bg-primary/10 transition-colors" href="search.html">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label text-xs font-medium">البحث</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-xl px-4 py-1.5 active:scale-90 transition-transform" href="dashboard.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label text-xs font-medium">الاستثمار</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container px-4 py-1.5 hover:bg-primary/10 transition-colors" href="dashboard.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label text-xs font-medium">الحساب</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full mt-auto py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-outline-variant/30 bg-surface-container-highest dark:bg-surface-container-highest">
+<div>
+<span class="font-headline font-bold text-lg text-primary">Terra Real Estate</span>
+<p class="font-body text-sm text-on-surface-variant mt-2">© 2024 تيرا للتطوير العقاري المملكة العربية السعودية. جميع الحقوق محفوظة.</p>
+</div>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm underline-offset-4" href="#">سياسة الخصوصية</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm underline-offset-4" href="#">شروط الخدمة</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm underline-offset-4" href="#">الأنظمة الإقليمية</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm underline-offset-4" href="#">اتصل بنا</a>
+</div>
+</footer>
+<script>
+        // Micro-interaction for hover states
+        document.querySelectorAll('.active\\:scale-95').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.style.transform = 'scale(0.95)';
+            });
+            button.addEventListener('mouseup', () => {
+                button.style.transform = 'scale(1)';
+            });
+        });
+
+        // Simple Chart Simulation for Yields
+        const canvas = document.createElement('canvas');
+        // If we needed to draw charts, we'd use a library or canvas here. 
+        // For now, the visual hierarchy is maintained through styled divs and shaders.
+    </script>
+
+<script>
+  // ربط أزرار التنقل بدون تغيير التصميم أو المحتوى
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttonRoutes = [
+      { text: 'بحث', url: 'search.html' },
+      { text: 'استكشف المشاريع', url: 'details.html' },
+      { text: 'تفاصيل المشروع', url: 'details.html' },
+      { text: 'التفاصيل', url: 'details.html' },
+      { text: 'احجز الآن', url: 'dashboard.html' },
+      { text: 'استكشف الآن', url: 'details.html' },
+      { text: 'استكشاف المزيد', url: 'search.html' },
+      { text: 'عرض الكل', url: 'search.html' }
+    ];
+
+    document.querySelectorAll('button').forEach(function (button) {
+      const cleanText = button.textContent.replace(/\s+/g, ' ').trim();
+      const route = buttonRoutes.find(function (item) { return cleanText.includes(item.text); });
+      if (route) {
+        button.addEventListener('click', function () {
+          window.location.href = route.url;
+        });
+      }
+    });
+  });
+</script>
+
+</body></html>

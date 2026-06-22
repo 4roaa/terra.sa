@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تيرا للتطوير العقاري | Terra Real Estate</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,700&amp;family=Nunito+Sans:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#dbd7cf",
+                    "on-secondary-fixed": "#1e1a13",
+                    "primary-fixed": "#c8e8d0",
+                    "secondary-fixed": "#f0e8db",
+                    "on-background": "#2e3230",
+                    "on-secondary-container": "#5e5548",
+                    "surface-container": "#f0ece4",
+                    "on-primary-fixed": "#002110",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed": "#221a05",
+                    "secondary": "#6b6358",
+                    "inverse-on-surface": "#f5f0e8",
+                    "surface-tint": "#4a7c59",
+                    "primary-fixed-dim": "#8ecf9e",
+                    "inverse-primary": "#8ecf9e",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f5f1ea",
+                    "primary": "#4a7c59",
+                    "primary-container": "#78a886",
+                    "tertiary-container": "#c4a66a",
+                    "secondary-container": "#f0e8db",
+                    "on-primary-container": "#d8f0de",
+                    "surface-variant": "#e4e0d8",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#2a6038",
+                    "background": "#faf6f0",
+                    "error": "#b83230",
+                    "error-container": "#ffdad8",
+                    "secondary-fixed-dim": "#d4ccbf",
+                    "outline": "#74796e",
+                    "on-secondary-fixed-variant": "#4a4538",
+                    "on-surface-variant": "#4a4e4a",
+                    "surface-container-highest": "#e4e0d8",
+                    "inverse-surface": "#2e3230",
+                    "surface-container-high": "#eae6de",
+                    "on-tertiary-fixed-variant": "#554020",
+                    "on-tertiary-container": "#554020",
+                    "tertiary-fixed-dim": "#dcc48e",
+                    "on-error-container": "#690005",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#faf6f0",
+                    "tertiary-fixed": "#f8e0a8",
+                    "on-surface": "#2e3230",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#c4c8bc",
+                    "surface": "#faf6f0",
+                    "tertiary": "#705c30"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.5rem",
+                    "lg": "1rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Literata", "serif"],
+                    "display": ["Literata", "serif"],
+                    "body": ["Nunito Sans", "sans-serif"],
+                    "label": ["Nunito Sans", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            background-color: #faf6f0;
+            color: #2e3230;
+        }
+        h1, h2, h3, .font-headline {
+            font-family: 'Literata', serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #4a7c59;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface-container-low shadow-sm z-[60]">
+<div class="flex justify-between items-center px-6 py-4 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">map</span>
+<h1 class="font-headline text-2xl font-bold text-primary tracking-tight leading-normal">Terra Real Estate</h1>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-primary font-bold border-b-2 border-primary py-1 transition-all" href="index.html">الرئيسية</a>
+<a class="text-on-surface-variant hover:bg-surface-variant/50 px-3 py-1 rounded-lg transition-colors" href="search.html">السوق العقاري</a>
+<a class="text-on-surface-variant hover:bg-surface-variant/50 px-3 py-1 rounded-lg transition-colors" href="details.html">المشاريع</a>
+<a class="text-on-surface-variant hover:bg-surface-variant/50 px-3 py-1 rounded-lg transition-colors" href="dashboard.html">الاستثمار</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex items-center gap-2 px-4 py-2 rounded-full border border-outline-variant hover:bg-surface-variant/20 transition-all text-on-surface">
+<span class="material-symbols-outlined">language</span>
+<span>EN</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden border-2 border-primary/20 cursor-pointer active:scale-95 transition-transform">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a Saudi real estate investor in business attire, looking confident and approachable. The lighting is soft and natural, emphasizing a warm and professional atmosphere consistent with the Terra design system's organic green and cream tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuOCQr7mM8RwzrQruncVc-yS9MDuEjKWFNKvZ9KKgC1PWfN4ZAFhaAjyFdBUBvaOrYER5lmixnIzze-7q08muoTM81lKGkg8M-ucmDX49Pw7tDkimMZJG89nGnUF0ZWpkw730rP2RX9MXL7VMDTOMy1l72ECoXytELCY2J9o90S7u9y74LHhKhz34Escaas4l0UsNkkhOBRBAWp5ig2pC4hHuFq7nZzhYfw3QdFQaXAIUaepcnoyVZarmfxf0V2SPBMqR655TyF34x"/>
+</div>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[751px] w-full flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A high-end architectural visualization of a modern, luxurious villa in Riyadh, Saudi Arabia. The villa features minimalist geometric architecture with floor-to-ceiling glass, natural stone accents, and lush integrated gardens. The scene is set during a warm sunset with soft golden light casting long shadows across the desert-inspired landscape, capturing the 'Rooted Warmth' aesthetic of Terra." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy114UWcW94VmwuS3Mvpe0DpNog6wL5lxwxwGvbQYY8vh9XVMP1CTXx-zVETSc_iFPj63_uFA23elhdnQyAd6DWPBKjhe4yO8R0z-ntQhMqfagQmBajN0iFMzalUpaFECWSA-Gobn5StfKqHtMigpaXf1wmReACYiGp_gA506c1gaaP4t0jV5asWoqiFGKYDbggwDtRgOPLyJQcJQYAIVavsN_dmxg0o3_qmelp3RE81_K3cyhb_9VQbT7HlrU6o2RqUDDt6bTqCDD"/>
+<div class="absolute inset-0 bg-gradient-to-l from-background/90 via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+<div class="max-w-2xl animate-fade-in-up">
+<span class="inline-block px-4 py-1.5 rounded-full bg-tertiary-container text-on-tertiary-container font-label text-sm mb-6">مستقبل السكن في قلب المملكة</span>
+<h2 class="text-5xl md:text-7xl font-headline font-bold text-on-background leading-[1.1] mb-6">ابنِ إرثك في <br/><span class="text-primary">أرض المستقبل</span></h2>
+<p class="text-on-surface-variant text-lg md:text-xl leading-relaxed mb-10 opacity-90">نقدم لكم تجربة عقارية متكاملة تجمع بين الأصالة السعودية والمعايير العالمية في أرقى أحياء الرياض والمملكة.</p>
+<!-- Search Bar -->
+<div class="bg-surface p-2 rounded-xl shadow-lg border border-outline-variant/30 flex flex-col md:flex-row gap-2 max-w-3xl">
+<div class="flex-1 flex items-center px-4 py-3 gap-3 border-b md:border-b-0 md:border-l border-outline-variant/20">
+<span class="material-symbols-outlined text-primary">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full font-body text-on-surface" placeholder="ابحث عن منطقة، مشروع..." type="text"/>
+</div>
+<div class="flex-none flex items-center px-4 gap-4 py-2">
+<select class="bg-transparent border-none focus:ring-0 text-on-surface-variant font-label cursor-pointer">
+<option>سكني</option>
+<option>تجاري</option>
+<option>أرض استثمارية</option>
+</select>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-bold hover:brightness-110 active:scale-95 transition-all flex items-center gap-2">
+<span>بحث</span>
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Regional Expertise (Asymmetric Layout) -->
+<section class="py-24 max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-xl">
+<h2 class="text-4xl font-headline font-bold text-on-background mb-4">خبرة إقليمية واسعة</h2>
+<p class="text-on-surface-variant text-lg">نغطي كافة مناطق المملكة بوعي عميق لاحتياجات السوق المحلي وتوجهات رؤية 2030.</p>
+</div>
+<div class="flex gap-4">
+<button class="p-3 rounded-full border border-outline-variant hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+<button class="p-3 rounded-full border border-outline-variant hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Central Region -->
+<div class="group relative h-[400px] rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A cinematic view of Riyadh's skyline at dusk, featuring the Kingdom Centre and other modern towers. The foreground shows a traditional yet modern residential development with earthy textures and organic green spaces, perfectly blending the urban and natural elements of the Central Region." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaDPy0OOs_bV07kJWdzCJ8YysfVzNHohGbfiKTwJ1lqsho7-kzglXMaHLryI0kYckGU_Pw1QBw5-IDwp5iUiYuBzSC20bGGSG3CpDK1o45zu9ozXJPkWNh59tmXYHeznrII6u8SxK_-ZC5H55y1212RZrk3p0JQMB32TYd3pIc2vYUjDvoSXqJINCgqQUBwAltf2KSBUmefYrkshYVo698G0cbThcUrhAuOEorOJJSsGggcWbmKhYAGc5YPnvbMFNo2FTOWT_oKTkC"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 p-8 text-white w-full">
+<h3 class="text-2xl font-headline font-bold mb-2">المنطقة الوسطى</h3>
+<p class="text-sm opacity-80 mb-4">الرياض والمناطق المجاورة - نبض الاقتصاد والاستثمار.</p>
+<a class="text-primary-fixed font-bold flex items-center gap-2 group-hover:gap-4 transition-all" href="details.html">
+<span>استكشف المشاريع</span>
+<span class="material-symbols-outlined">arrow_back</span>
+</a>
+</div>
+</div>
+<!-- Western Region -->
+<div class="group relative h-[400px] rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 md:mt-12">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A breathtaking view of the Red Sea coastline in Jeddah, featuring ultra-modern waterfront luxury apartments with white facades and turquoise glass. The lighting is bright and airy, capturing the coastal breeze and the prestigious lifestyle of the Western Region." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM0JGfiR274hO2CaVfx_qE6H-xrKwJWXgvn1U6AL0v1yOh-AF8SW2DVMnUosz6WgGc2_Okhgb5nwX4pmqT2GCg4gRvU5rE9vbW28oKg2gnXieH6TwJnUn05sjxNKz6ZU3RthyYbXisujGZ3GaRnuPegJXQJ3AI2b8dUceiiyRrW69yPLlJZ7CwCcYrx2-S43l-MOX1Aj-Ws4BoxAnBipI3ka0xZ-U5z995l7ZEehjWFXojoC31LliXqH2UwWy9h9HNAmj3Z3irIOgI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 p-8 text-white w-full">
+<h3 class="text-2xl font-headline font-bold mb-2">المنطقة الغربية</h3>
+<p class="text-sm opacity-80 mb-4">جدة، مكة، والمدينة - بوابة العالم وتجربة عصرية فريدة.</p>
+<a class="text-primary-fixed font-bold flex items-center gap-2 group-hover:gap-4 transition-all" href="details.html">
+<span>استكشف المشاريع</span>
+<span class="material-symbols-outlined">arrow_back</span>
+</a>
+</div>
+</div>
+<!-- Eastern Region -->
+<div class="group relative h-[400px] rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A sophisticated industrial and residential blend in Dammam, showing modern logistics hubs and serene luxury compounds for professionals. The atmosphere is grounded and productive, with warm sunset tones reflecting off glass buildings and landscaped desert parks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOod_cAlukTW-N0-qxa5XJ8L_rz__98T-PDal204lhP2niDS0WaQzLVBeKTX2cS5rRKhDvXsia7RVsywyMpKb2UpLsQ1KN6cFEIXS_1K8tq4Q-XDvuOtbIvjl3Y_ofFX1-WmlXI1J9pFpcrlQlpUlawk5AZ9UvJlbQyt5g8hsYnewdbcIj9WrvF5wSoElW04gU5ntv4CNLKTR3Dh8ljeoI8G1vJ37CjdQ8Q1AZVNCnH07EOOnXBEy2i7l2XgrK8gE895JJrss0mHgU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 p-8 text-white w-full">
+<h3 class="text-2xl font-headline font-bold mb-2">المنطقة الشرقية</h3>
+<p class="text-sm opacity-80 mb-4">الدمام والخبر - مركز الطاقة والمشاريع السكنية الراقية.</p>
+<a class="text-primary-fixed font-bold flex items-center gap-2 group-hover:gap-4 transition-all" href="details.html">
+<span>استكشف المشاريع</span>
+<span class="material-symbols-outlined">arrow_back</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Projects (The Line Inspired) -->
+<section class="bg-surface-container py-24">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-16 text-center">
+<h2 class="text-4xl font-headline font-bold text-on-background mb-4">مشاريع استثنائية</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">نستلهم من مشاريع المملكة الطموحة لنخلق مجمعات سكنية وتجارية تتجاوز التوقعات.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Project Card 1 (Vertical Large) -->
+<div class="lg:col-span-2 lg:row-span-2 bg-background rounded-xl overflow-hidden shadow-sm border border-outline-variant/10 flex flex-col">
+<div class="relative h-2/3 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="An futuristic, The Line-inspired residential complex with vertical gardens, sleek reflective glass surfaces, and integrated smart technology. The architecture is revolutionary and sustainable, set against a pristine desert background under a clear, bright sky, embodyng the Terra primary green and warm cream palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqzeYe3o_oHnNDvL6PEme6HuBErtUvvrl6jucEDYats5SX6ZwreE0q7PxvNov2dAuB76VbZnEHM0HCsRyghkv0_ZUgL1DXeMBWV9qhO3N-ezqxJCZcngRElplVWEXm9GTKB4RcfDG6ECiU7vKOkzNS9O4pBbEbkqq2haiYZRL3T9LDe6dNxr9AD0a83jgD6S59p7iMGB34MAQj4GmbzZ14y5Ht8YG-LC4UnZBn5CPTFkfGNgs7Y3UuYLdlVviSqr4Ws0ulW1Q6uiNe"/>
+<span class="absolute top-4 right-4 bg-tertiary text-on-tertiary px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">الأكثر طلباً</span>
+</div>
+<div class="p-8 flex flex-col justify-between flex-1">
+<div>
+<h3 class="text-2xl font-headline font-bold mb-3 text-on-background">مجمع "خط المستقبل" السكني</h3>
+<p class="text-on-surface-variant mb-6 line-clamp-2">تصميم ثوري مستوحى من رؤية نيوم، يجمع بين الخصوصية التامة والحياة العصرية المستدامة في قلب الرياض.</p>
+</div>
+<div class="flex justify-between items-center mt-4">
+<span class="text-primary font-bold text-xl">تبدأ من 2.5 مليون ر.س</span>
+<button class="w-12 h-12 rounded-xl bg-primary-container/20 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all active:scale-90">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="bg-background rounded-xl overflow-hidden shadow-sm border border-outline-variant/10 group">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern luxury villas with traditional Najdi architectural elements, reimagined with clean lines and warm stone textures. The villas are surrounded by desert landscaping and palm trees, with warm night lighting creating a serene and inviting atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcSqBH-ODF1I4EGcBcR5AqZ-PDdV07Atd2wJiZoCoIn4fluArF-w5v8bggjfa-MdxSaFEkTVqf683Xr0AJuxjoCfFtt76vPfWLFhIRcLuwXSZYoBtf7Mov_Ez4547Xfe-CiVVXf3vMFxsbVcOI-nRofJbp9YeFoX1f5jljIHgm1PU8cU1LSJOzu5NL2a4v2Ob2PP344WeMQQMZ_DIX31oEB1o8UQbVG75aNW0mqLYsqNx54wkA0VT_C9jfXFZqHzQQFfb_cMmiSZXN"/>
+</div>
+<div class="p-6">
+<h4 class="font-headline font-bold text-lg mb-2">فلل تيرا واحة</h4>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>حي النرجس، الرياض</span>
+</div>
+<button class="w-full py-2 bg-surface-container-high text-primary rounded-lg font-bold hover:bg-primary-container transition-colors">تفاصيل المشروع</button>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="bg-background rounded-xl overflow-hidden shadow-sm border border-outline-variant/10 group">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A luxury commercial tower with a unique twisting glass facade, reflecting the clear blue sky and surrounding modern district. The base of the tower features premium retail spaces and green terraces, conveying a sense of high-end business and investment potential." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPPPNL6xURUYSoLY4s2UfDoVWXgD7s5P65GMqYYzODIt026funhaNKQYQ8Udx2V12NY8iAY0t-xpOgR9k4CbmxOTXnC1A3XQg4fJZ5uCrxDmBnTxFNTHOYijwl93F9kesj_uRqi8LtvSjc7rQXk7qR4QxKeH5IEz-w-WDPi_xhEFZ_I9CqwKihkZ0eAhig_wdNNK3R-IH4LRpkEvYznPAyz17mKmWm9--EE_G-wT8bRzdgW4NaRJn6DSo2vYbu0TFQj0rp3lBkqSFq"/>
+</div>
+<div class="p-6">
+<h4 class="font-headline font-bold text-lg mb-2">برج الأعمال الأخضر</h4>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>مركز الملك عبد الله المالي</span>
+</div>
+<button class="w-full py-2 bg-surface-container-high text-primary rounded-lg font-bold hover:bg-primary-container transition-colors">تفاصيل المشروع</button>
+</div>
+</div>
+<!-- Project Card 4 -->
+<div class="lg:col-span-2 bg-primary text-on-primary rounded-xl overflow-hidden flex items-center p-8 relative">
+<div class="relative z-10 max-w-md">
+<h3 class="text-3xl font-headline font-bold mb-4">فرص استثمارية في الأراضي الخام</h3>
+<p class="opacity-90 mb-8 text-lg">نقدم لكم وصولاً حصرياً لمواقع استراتيجية مخصصة للتطوير العقاري الضخم بمساحات تتجاوز 100,000 متر مربع.</p>
+<button class="bg-on-primary text-primary px-8 py-3 rounded-xl font-bold flex items-center gap-3 hover:shadow-lg transition-all">
+<span>استفسر الآن</span>
+<span class="material-symbols-outlined">trending_up</span>
+</button>
+</div>
+<div class="absolute left-0 bottom-0 top-0 w-1/2 opacity-20 pointer-events-none">
+<span class="material-symbols-outlined text-[200px] absolute -bottom-10 -left-10">landscape</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / CTA -->
+<section class="py-24 max-w-5xl mx-auto px-6 text-center">
+<div class="bg-surface-container-low rounded-3xl p-12 md:p-20 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-tertiary/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+<h2 class="text-4xl font-headline font-bold text-on-background mb-6 relative z-10">كن أول من يعرف بمشاريعنا القادمة</h2>
+<p class="text-on-surface-variant text-lg mb-10 relative z-10">اشترك في نشرتنا البريدية لتصلك أحدث العروض والفرص الاستثمارية الحصرية.</p>
+<form class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto relative z-10">
+<input class="flex-1 px-6 py-4 rounded-xl border-none bg-white shadow-sm focus:ring-2 focus:ring-primary text-on-surface" placeholder="بريدك الإلكتروني" type="email"/>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-xl font-bold hover:brightness-110 shadow-lg active:scale-95 transition-all">اشتراك</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-surface-container-highest border-t border-outline-variant/30">
+<div class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-10 max-w-7xl mx-auto">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">map</span>
+<span class="font-headline font-bold text-lg text-primary">Terra Development</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant max-w-xs text-center md:text-right">تطوير عقاري برؤية سعودية طموحة، نجمع بين عراقة الماضي وإبداع المستقبل.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 md:gap-12">
+<a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors underline-offset-4" href="#">سياسة الخصوصية</a>
+<a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors underline-offset-4" href="#">شروط الخدمة</a>
+<a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors underline-offset-4" href="#">الأنظمة الإقليمية</a>
+<a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors underline-offset-4" href="#">اتصل بنا</a>
+</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-variant/30 flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-variant/30 flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+</div>
+</div>
+<div class="py-6 px-8 border-t border-outline-variant/10 text-center">
+<p class="font-body text-sm text-on-surface-variant/60">© 2024 Terra Development Saudi Arabia. All rights reserved.</p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 md:hidden bg-surface-container-high shadow-[0_-4px_20px_rgba(46,50,48,0.06)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-xl px-4 py-1.5 transition-transform active:scale-90" href="index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label text-xs font-medium">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container px-4 py-1.5 hover:bg-primary/10 transition-colors" href="search.html">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label text-xs font-medium">البحث</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container px-4 py-1.5 hover:bg-primary/10 transition-colors" href="dashboard.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label text-xs font-medium">استثمر</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container px-4 py-1.5 hover:bg-primary/10 transition-colors" href="dashboard.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label text-xs font-medium">حسابي</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for the search filters
+        const searchInput = document.querySelector('input');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('border-primary/40');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('border-primary/40');
+        });
+
+        // Simple Fade In Animation on Scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+
+<script>
+  // ربط أزرار التنقل بدون تغيير التصميم أو المحتوى
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttonRoutes = [
+      { text: 'بحث', url: 'search.html' },
+      { text: 'استكشف المشاريع', url: 'details.html' },
+      { text: 'تفاصيل المشروع', url: 'details.html' },
+      { text: 'التفاصيل', url: 'details.html' },
+      { text: 'احجز الآن', url: 'dashboard.html' },
+      { text: 'استكشف الآن', url: 'details.html' },
+      { text: 'استكشاف المزيد', url: 'search.html' },
+      { text: 'عرض الكل', url: 'search.html' }
+    ];
+
+    document.querySelectorAll('button').forEach(function (button) {
+      const cleanText = button.textContent.replace(/\s+/g, ' ').trim();
+      const route = buttonRoutes.find(function (item) { return cleanText.includes(item.text); });
+      if (route) {
+        button.addEventListener('click', function () {
+          window.location.href = route.url;
+        });
+      }
+    });
+  });
+</script>
+
+</body></html>
